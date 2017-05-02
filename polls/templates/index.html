@@ -1,0 +1,10 @@
+{% if question_list %}
+    <h1>Немного вопросов!</h1>
+    <ul>
+    {% for question in question_list %}
+        <li><a href="{% url 'polls:detail' question.id %}" style="text-decoration:none; color:black">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Тут нет ничего, изыди демон</p>
+{% endif %}
